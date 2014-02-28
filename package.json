@@ -1,0 +1,12 @@
+{
+  "name": "snap-ls",
+  "version": "0.0.1",
+  "description": "SNAP List directory module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Philippe Caseiro",
+  "license": "AGPLv3",
+  "private": true
+}
