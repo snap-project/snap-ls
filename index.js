@@ -14,12 +14,11 @@ function ls(params, cb) {
         return cb(new Error("You are trying to list a forbiden directory"))
     }
     else {
-        try {
+        if (fs.exists(filepath)) {
             fs.readdir(filepath, cb);
         }
-        catch (e) {
-            logMyErrors(e);
-            return cb(new Error("Missing directory"))
+        else {
+            return cb(new Error("Bad Bad Bad"))
         }
     }
 
