@@ -7,9 +7,22 @@ var path = require('path');
 
 function ls(params, cb) {
     var appName = params[0];
-    var root = path.join(this.config.get('apps:dir'), appName, params[1]);
+    var root = path.join(this.config.get('apps:dir'), appName);
+    var filepath = path.join(root, params[1])
 
-    fs.readdir(root, cb);
+    if (path.relative(root, filepath).indexOf('..') !== -1){
+        return cb(new Error("You are trying to list a forbiden directory"))
+    }
+    else {
+        try {
+            fs.readdir(filepath, cb);
+        }
+        catch (e) {
+            logMyErrors(e);
+            return cb(new Error("Missing directory"))
+        }
+    }
+
   }
 
 function lsLoad(opts, cb) {
@@ -23,4 +36,4 @@ function lsLoad(opts, cb) {
 
 module.exports = {
     load: lsLoad
-  };
+  }
