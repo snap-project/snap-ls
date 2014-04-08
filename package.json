@@ -8,5 +8,8 @@
   },
   "author": "Philippe Caseiro",
   "license": "AGPLv3",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "mime": "^1.2.11"
+  }
 }

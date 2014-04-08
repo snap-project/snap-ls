@@ -5,5 +5,5 @@ function appListHook(args) {
   args.splice(2, 0, currentApp);
 }
 
-console.log("Client.js 1")
 supervisor.bridge('dir', 'ls', appListHook);
+supervisor.bridge('dir', 'lsJPG', appListHook);
