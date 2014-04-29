@@ -6,4 +6,4 @@ function appListHook(args) {
 }
 
 supervisor.bridge('dir', 'ls', appListHook);
-supervisor.bridge('dir', 'lsJPG', appListHook);
+supervisor.bridge('dir', 'lsImages', appListHook);
